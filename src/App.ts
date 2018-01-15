@@ -40,6 +40,18 @@ async function main(): Promise<void> {
     throw e;
   }
 
+  server.auth.strategy('simple', 'bearer-access-token', {
+    validateFunc: (token, callback) => {
+      if (token === env.apiSecret) {
+        return callback(null, true, { token });
+      }
+
+      return callback(null, false, { token });
+    }
+  });
+
+  server.auth.default('simple');
+
   try {
     server.route(Routes());
   } catch (e) {

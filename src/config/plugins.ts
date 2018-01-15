@@ -11,11 +11,13 @@ export default function get(): PluginRegistrationObject<any>[] {
     register: require('hapi-swagger'),
     options: {
       info: {
-        title: 'API Documentation',
-        description: 'Description goes here',
+        title: 'Vizio Smartcast API Documentation',
+        description: 'API to control Vizio Smartcast',
         version: '1.0.0'
       },
       schemes: [env.protocol]
     }
+  }, {
+    register: require('hapi-auth-bearer-token')
   }];
 }

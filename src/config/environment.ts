@@ -5,6 +5,7 @@ export default class Environment {
   host: string;
   port: number;
   protocol: ServerConnectionInfo['protocol'];
+  apiSecret: string | undefined;
   vizioIpAddress: string | undefined;
   vizioMacAddress: string | undefined;
   vizioAuthToken: string | undefined;
@@ -18,6 +19,10 @@ export default class Environment {
     this.protocol = <ServerConnectionInfo['protocol']>process.env.PROTOCOL || 'http';
     if (['http', 'https', 'socket'].indexOf(this.protocol) < 0) {
       throw new Error(`Unsupported protocol "${this.protocol}"`);
+    }
+    this.apiSecret = process.env.API_SECRET || undefined;
+    if (!this.apiSecret) {
+      throw new Error('API Secret must be provided');
     }
     this.vizioIpAddress = process.env.VIZIO_IP_ADDRESS || undefined;
     this.vizioMacAddress = process.env.VIZIO_MAC_ADDRESS || undefined;

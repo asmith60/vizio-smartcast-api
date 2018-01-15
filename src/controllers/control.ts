@@ -7,6 +7,7 @@ import * as boom from 'boom';
 export function powerOn(): RouteAdditionalConfigurationOptions {
   return {
     description: 'Turn on Vizio',
+    tags: ['api'],
     handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
       const env: Environment = new Environment();
 
@@ -42,6 +43,7 @@ export function powerOn(): RouteAdditionalConfigurationOptions {
 export function powerOff(): RouteAdditionalConfigurationOptions {
   return {
     description: 'Turn off Vizio',
+    tags: ['api'],
     handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
       const env: Environment = new Environment();
 
@@ -54,7 +56,6 @@ export function powerOff(): RouteAdditionalConfigurationOptions {
         return reply(boom.badRequest(e));
       }
 
-      fetch('sdsd');
       return reply();
     }
   };

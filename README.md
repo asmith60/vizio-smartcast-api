@@ -23,7 +23,7 @@ npm run build
 ```bash
 npm install
 npm run build
-docker build -t $ORG/$IMAGE_NAME:$TAG .
+docker build -t asmith60/vizio-smartcast-api:latest .
 ```
 
 ## Lint
