@@ -1,5 +1,6 @@
-# Node Hapi.js Typescript Template
+# Vizio Smartcast API
 
+API to control a Vizio Smartcast
 
 ## Build
 
