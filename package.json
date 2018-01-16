@@ -13,6 +13,7 @@
     "lint": "node_modules/.bin/tslint -p . -c tslint.json",
     "debug": "node_modules/.bin/nodemon --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/App.js",
     "docker": "docker-compose down --rmi all && docker-compose up --build",
+    "docker:build": "npm run build && docker build -t asmith60/vizio-smartcast-api:latest .",
     "docker:test": "docker-compose -f docker-compose-debug.yml down --rmi all && docker-compose -f docker-compose-debug.yml run app test",
     "docker:debug": "docker-compose -f docker-compose-debug.yml down --rmi all && docker-compose -f docker-compose-debug.yml up --build",
     "start": "node dist/App.js"
