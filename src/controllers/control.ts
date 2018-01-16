@@ -60,3 +60,45 @@ export function powerOff(): RouteAdditionalConfigurationOptions {
     }
   };
 }
+
+export function mediaPlay(): RouteAdditionalConfigurationOptions {
+  return {
+    description: 'Play media',
+    tags: ['api'],
+    handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
+      const env: Environment = new Environment();
+
+      const tv = new smartcast(env.vizioIpAddress!, env.vizioAuthToken);
+
+      try {
+        await tv.control.media.play();
+      } catch (e) {
+        console.error('Media play failed:', e);
+        return reply(boom.badRequest(e));
+      }
+
+      return reply();
+    }
+  };
+}
+
+export function mediaPause(): RouteAdditionalConfigurationOptions {
+  return {
+    description: 'Play media',
+    tags: ['api'],
+    handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
+      const env: Environment = new Environment();
+
+      const tv = new smartcast(env.vizioIpAddress!, env.vizioAuthToken);
+
+      try {
+        await tv.control.media.pause();
+      } catch (e) {
+        console.error('Media pause failed:', e);
+        return reply(boom.badRequest(e));
+      }
+
+      return reply();
+    }
+  };
+}

@@ -10,5 +10,13 @@ export default function get(): RouteConfiguration[] {
     method: 'POST',
     path: '/control/power/off',
     config: Control.powerOff()
+  }, {
+    method: 'POST',
+    path: '/control/media/play',
+    config: Control.mediaPlay()
+  }, {
+    method: 'POST',
+    path: '/control/media/pause',
+    config: Control.mediaPause()
   }];
 }
