@@ -1,5 +1,7 @@
 import { RouteConfiguration } from 'hapi';
 import * as Control from '../controllers/control';
+import * as Input from '../controllers/input';
+
 
 export default function get(): RouteConfiguration[] {
   return [{
@@ -18,5 +20,9 @@ export default function get(): RouteConfiguration[] {
     method: 'POST',
     path: '/control/media/pause',
     config: Control.mediaPause()
+  }, {
+    method: 'POST',
+    path: '/input/set/{name}',
+    config: Input.set()
   }];
 }

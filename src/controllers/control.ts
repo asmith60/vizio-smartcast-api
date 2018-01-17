@@ -6,7 +6,7 @@ import * as boom from 'boom';
 
 export function powerOn(): RouteAdditionalConfigurationOptions {
   return {
-    description: 'Turn on Vizio',
+    description: 'Power on TV',
     tags: ['api'],
     handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
       const env: Environment = new Environment();
@@ -42,7 +42,7 @@ export function powerOn(): RouteAdditionalConfigurationOptions {
 
 export function powerOff(): RouteAdditionalConfigurationOptions {
   return {
-    description: 'Turn off Vizio',
+    description: 'Power off TV',
     tags: ['api'],
     handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
       const env: Environment = new Environment();
@@ -84,7 +84,7 @@ export function mediaPlay(): RouteAdditionalConfigurationOptions {
 
 export function mediaPause(): RouteAdditionalConfigurationOptions {
   return {
-    description: 'Play media',
+    description: 'Pause media',
     tags: ['api'],
     handler: async <RouteHandler>(request: Request, reply: ReplyNoContinue) => {
       const env: Environment = new Environment();
