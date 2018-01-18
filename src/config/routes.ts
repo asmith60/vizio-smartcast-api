@@ -22,31 +22,31 @@ export default function get(): RouteConfiguration[] {
     config: Control.mediaPause()
   }, {
     method: 'POST',
-    path: '/control/navigate/up',
+    path: '/navigate/up',
     config: Navigate.up()
   }, {
     method: 'POST',
-    path: '/control/navigate/down',
+    path: '/navigate/down',
     config: Navigate.down()
   }, {
     method: 'POST',
-    path: '/control/navigate/left',
+    path: '/navigate/left',
     config: Navigate.left()
   }, {
     method: 'POST',
-    path: '/control/navigate/right',
+    path: '/navigate/right',
     config: Navigate.right()
   }, {
     method: 'POST',
-    path: '/control/navigate/ok',
+    path: '/navigate/ok',
     config: Navigate.ok()
   }, {
     method: 'POST',
-    path: '/control/navigate/back',
+    path: '/navigate/back',
     config: Navigate.back()
   }, {
     method: 'POST',
-    path: '/control/navigate/exit',
+    path: '/navigate/exit',
     config: Navigate.exit()
   }, {
     method: 'POST',
